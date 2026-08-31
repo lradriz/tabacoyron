@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tabaco y Ron</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{dark:{950:"#060504",900:"#0C0B0A",800:"#141210",700:"#1E1C19",600:"#2A2620",500:"#4A3E34",400:"#8A7E72",300:"#B0A496",200:"#D4C8B8",100:"#EDE8DE",50:"#F5F0E8"},rum:{500:"#C8884A",400:"#D89858",300:"#E4A866",600:"#B07438"}},fontFamily:{display:["Space Grotesk","sans-serif"],body:["DM Sans","sans-serif"]}}}}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:"DM Sans",sans-serif;background:#0C0B0A;color:#F0EBE3;overflow-x:hidden}.grain::before{content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}.section-grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#0C0B0A}::-webkit-scrollbar-thumb{background:#2A2620;border-radius:3px}::-webkit-scrollbar-thumb:hover{background:#C8884A}.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}.reveal.visible{opacity:1;transform:translateY(0)}.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}.btn-rum{background:#C8884A;color:#0C0B0A;font-weight:600;transition:all .3s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}.btn-rum:hover{background:#D89858;box-shadow:0 0 30px rgba(200,136,74,.3);transform:translateY(-2px)}.btn-rum:active{transform:translateY(0) scale(.98)}.btn-outline{border:1px solid #2A2620;color:#F0EBE3;transition:all .3s cubic-bezier(.16,1,.3,1)}.btn-outline:hover{border-color:#C8884A;color:#C8884A;transform:translateY(-2px)}.btn-outline:active{transform:translateY(0) scale(.98)}.card-hover{transition:all .5s cubic-bezier(.16,1,.3,1)}.card-hover:hover{transform:translateY(-8px);box-shadow:0 20px 60px rgba(0,0,0,.4)}.nav-blur{backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);background:rgba(12,11,10,.8);border-bottom:1px solid rgba(42,38,32,.5)}.ambient-glow{position:absolute;width:600px;height:600px;background:radial-gradient(circle,rgba(200,136,74,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}.mobile-menu{transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}.mobile-menu.open{transform:translateX(0)}@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}.marquee-track{animation:marquee 30s linear infinite}@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.reveal{transition:none;opacity:1;transform:none}}.img-zoom{overflow:hidden}.img-zoom img{transition:transform .6s cubic-bezier(.16,1,.3,1)}.img-zoom:hover img{transform:scale(1.08)}.line-accent{width:60px;height:2px;background:#C8884A}:focus-visible{outline:2px solid #C8884A;outline-offset:2px}
+</style>
+</head>
+<body class="bg-dark-900 text-dark-100 font-body grain">
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur" id="navbar"><div class="max-w-7xl mx-auto px-6 lg:px-8"><div class="flex items-center justify-between h-16 lg:h-20">
+<a href="#" class="font-display text-xl font-bold tracking-tight text-dark-50">Tabaco y Ron</a>
+<div class="hidden lg:flex items-center gap-8">
+<a href="#cocktails" class="text-sm text-dark-300 hover:text-rum-500 transition-colors duration-300">Carta</a>
+<a href="#about" class="text-sm text-dark-300 hover:text-rum-500 transition-colors duration-300">Sobre</a>
+<a href="#experience" class="text-sm text-dark-300 hover:text-rum-500 transition-colors duration-300">Experiencia</a>
+<a href="#events" class="text-sm text-dark-300 hover:text-rum-500 transition-colors duration-300">Eventos</a>
+<a href="#reservation" class="btn-rum px-5 py-2.5 rounded-full text-sm">Hacer reserva</a>
+</div>
+<button class="lg:hidden text-dark-100" id="menuToggle" aria-label="Abrir menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+</div></div></nav>
+<div class="mobile-menu fixed inset-0 z-[60] bg-dark-950/98 backdrop-blur-xl" id="mobileMenu"><div class="flex justify-between items-center p-6">
+<span class="font-display text-xl font-bold tracking-tight text-dark-50">Tabaco y Ron</span>
+<button id="menuClose" class="text-dark-100" aria-label="Cerrar menu"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+</div><div class="flex flex-col items-center justify-center h-full gap-8">
+<a href="#cocktails" class="font-display text-2xl font-light text-dark-100 hover:text-rum-400 transition-colors mobile-link">Carta</a>
+<a href="#about" class="font-display text-2xl font-light text-dark-100 hover:text-rum-400 transition-colors mobile-link">Sobre</a>
+<a href="#experience" class="font-display text-2xl font-light text-dark-100 hover:text-rum-400 transition-colors mobile-link">Experiencia</a>
+<a href="#events" class="font-display text-2xl font-light text-dark-100 hover:text-rum-400 transition-colors mobile-link">Eventos</a>
+<a href="#reservation" class="btn-rum px-8 py-3 rounded-full text-sm mt-4 mobile-link">Hacer reserva</a>
+</div></div>
+<section class="min-h-[100dvh] pt-20 relative overflow-hidden"><div class="ambient-glow -top-40 -right-40"></div><div class="max-w-7xl mx-auto px-6 lg:px-8 h-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[calc(100dvh-80px)]">
+<div class="lg:col-span-5 lg:pr-12 xl:pr-20 reveal">
+<p class="text-rum-500 text-sm font-medium tracking-[0.2em] uppercase mb-6">Bienvenido a nuestro mundo</p>
+<h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[0.95] text-dark-50 mb-6">Donde el <span class="text-rum-500">tabaco</span><br>encuentra al <span class="text-rum-500">ron</span></h1>
+<p class="text-dark-300 text-lg font-light leading-relaxed max-w-md mb-10">Un espacio donde el tiempo se detiene. Cócteles artesanales, tabacos selectos y una atmósfera que envuelve cada sentido.</p>
+<div class="flex flex-wrap gap-4">
+<a href="#reservation" class="btn-rum px-8 py-4 rounded-full text-sm">Hacer reserva</a>
+<a href="#cocktails" class="btn-outline px-8 py-4 rounded-full text-sm">Ver carta</a>
+</div>
+</div>
+<div class="lg:col-span-7 relative reveal reveal-delay-2">
+<div class="relative"><div class="aspect-[4/5] lg:aspect-[3/4] rounded-2xl overflow-hidden img-zoom"><img src="https://picsum.photos/seed/tabaco-ron-hero/1000/1200" alt="Ambiente elegante del bar" class="w-full h-full object-cover"></div><div class="absolute -bottom-6 -left-6 w-32 h-32 border border-rum-500/20 rounded-2xl"></div><div class="absolute -top-4 -right-4 w-24 h-24 bg-rum-500/10 rounded-xl"></div></div>
+</div>
+</div>
+</div>
+</section>
+<div class="py-6 border-y border-dark-600 overflow-hidden"><div class="marquee-track flex gap-12 whitespace-nowrap">
+<span class="font-display text-2xl font-light text-dark-400">RONES ARTESANALES</span><span class="text-rum-500">―</span>
+<span class="font-display text-2xl font-light text-dark-400">TABACOS SELECTOS</span><span class="text-rum-500">―</span>
+<span class="font-display text-2xl font-light text-dark-400">COCTELERIA DE AUTOR</span><span class="text-rum-500">―</span>
+<span class="font-display text-2xl font-light text-dark-400">AMBIENTE EXCLUSIVO</span><span class="text-rum-500">―</span>
+<span class="font-display text-2xl font-light text-dark-400">RONES ARTESANALES</span><span class="text-rum-500">―</span>
+<span class="font-display text-2xl font-light text-dark-400">TABACOS SELECTOS</span><span class="text-rum-500">―</span>
+<span class="font-display text-2xl font-light text-dark-400">COCTELERIA DE AUTOR</span><span class="text-rum-500">―</span>
+<span class="font-display text-2xl font-light text-dark-400">AMBIENTE EXCLUSIVO</span><span class="text-rum-500">―</span>
+</div></div>
+<section id="about" class="py-24 lg:py-32 relative section-grain"><div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<div class="lg:col-span-5 reveal"><div class="aspect-[3/4] rounded-2xl overflow-hidden img-zoom relative"><img src="https://picsum.photos/seed/dark-bar-interior/800/1000" alt="Interior elegante del bar" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-dark-950/60 to-transparent"></div></div></div>
+<div class="lg:col-span-7">
+<p class="text-rum-500 text-sm font-medium tracking-[0.2em] uppercase mb-4 reveal reveal-delay-1">La historia</p>
+<div class="line-accent mb-6 reveal reveal-delay-2"></div>
+<h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.95] text-dark-50 mb-6 reveal reveal-delay-2">Una tradicion en cada<br><span class="text-rum-500">detalle</span></h2>
+<p class="text-dark-300 text-lg font-light leading-relaxed max-w-lg mb-6 reveal reveal-delay-3">Fundado con la pasion por los buenos rones y los mejores tabacos, creamos un espacio donde cada rincon cuenta una historia.</p>
+<p class="text-dark-400 text-base leading-relaxed max-w-md mb-8 reveal reveal-delay-4">Nuestro bar nace como un homenaje a las noches largas y los sabores que se recuerdan.</p>
+<a href="#cocktails" class="btn-rum inline-flex items-center gap-3 px-8 py-4 rounded-full text-sm group reveal reveal-delay-4">Explorar la carta<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+</div>
+</div>
+</div>
+</section>
+<section id="cocktails" class="py-24 lg:py-32 relative section-grain"><div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center mb-16">
+<p class="text-rum-500 text-sm font-medium tracking-[0.2em] uppercase mb-4 reveal">La carta</p>
+<div class="line-accent mx-auto mb-6 reveal"></div>
+<h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.95] text-dark-50 reveal">Cocktails destacados</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+<div class="card-hover group rounded-2xl overflow-hidden bg-dark-800 border border-dark-600 reveal"><div class="aspect-[4/3] overflow-hidden img-zoom"><img src="https://picsum.photos/seed/cocktail-rum-1/600/450" alt="Cocktail Clasico" class="w-full h-full object-cover"></div><div class="p-6 lg:p-8"><div class="flex items-start justify-between mb-3"><div><h3 class="font-display text-xl font-semibold text-dark-50">Ron Mojito Clasico</h3><p class="text-dark-400 text-sm mt-1">Ron añejo, hierbabuena, lima, azucar</p></div><span class="text-rum-500 font-display text-lg font-semibold whitespace-nowrap">$18</span></div><p class="text-dark-300 text-sm leading-relaxed">Un renovado clasico donde el ron añejo protagoniza junto a hierbas frescas.</p></div></div>
+<div class="card-hover group rounded-2xl overflow-hidden bg-dark-800 border border-dark-600 reveal reveal-delay-1"><div class="aspect-[4/3] overflow-hidden img-zoom"><img src="https://picsum.photos/seed/cocktail-rum-2/600/450" alt="Cocktail Ozono" class="w-full h-full object-cover"></div><div class="p-6 lg:p-8"><div class="flex items-start justify-between mb-3"><div><h3 class="font-display text-xl font-semibold text-dark-50">Ozono Del Caribe</h3><p class="text-dark-400 text-sm mt-1">Ron oscuro, coco, passionfruit, especias</p></div><span class="text-rum-500 font-display text-lg font-semibold whitespace-nowrap">$22</span></div><p class="text-dark-300 text-sm leading-relaxed">Tropical y especiado, un viaje sensorial que evoca los atardeceres caribeños.</p></div></div>
+<div class="card-hover group rounded-2xl overflow-hidden bg-dark-800 border border-dark-600 reveal reveal-delay-2"><div class="aspect-[4/3] overflow-hidden img-zoom"><img src="https://picsum.photos/seed/cocktail-rum-3/600/450" alt="Cocktail Averno" class="w-full h-full object-cover"></div><div class="p-6 lg:p-8"><div class="flex items-start justify-between mb-3"><div><h3 class="font-display text-xl font-semibold text-dark-50">Averno De Tabaco</h3><p class="text-dark-400 text-sm mt-1">Ron vintage, bitter, tabaco infundido, miel</p></div><span class="text-rum-500 font-display text-lg font-semibold whitespace-nowrap">$26</span></div><p class="text-dark-300 text-sm leading-relaxed">Nuestra creacion mas ambiciosa. Ron vintage infusionado con tabaco y miel silvestre.</p></div></div>
+</div>
+</div>
+</section>
+<section id="experience" class="py-24 lg:py-32 relative overflow-hidden"><div class="absolute inset-0 bg-dark-950"></div><div class="ambient-glow -bottom-60 -left-60"></div><div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+<div class="reveal"><div class="aspect-[4/5] rounded-2xl overflow-hidden img-zoom relative"><img src="https://picsum.photos/seed/rum-tobacco-bar/800/1000" alt="La experiencia" class="w-full h-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-transparent"></div></div></div>
+<div class="relative">
+<p class="text-rum-500 text-sm font-medium tracking-[0.2em] uppercase mb-4 reveal reveal-delay-1">La experiencia</p>
+<div class="line-accent mb-6 reveal reveal-delay-2"></div>
+<h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.95] text-dark-50 mb-6 reveal reveal-delay-2">Un ambiente <br><span class="text-rum-500">que envuelve</span></h2>
+<p class="text-dark-300 text-lg font-light leading-relaxed max-w-lg mb-8 reveal reveal-delay-3">Cada rincon de Tabaco y Ron esta pensado para invitar a la lentitud. La madera, la luz cálida y la musica selecta crean un ambiente donde el tiempo deja de importar.</p>
+<div class="space-y-8 reveal reveal-delay-4">
+<div class="flex gap-4"><span class="font-display text-3xl font-bold text-rum-500">12</span><div><h4 class="font-display text-lg font-semibold text-dark-50">Anos de trayectoria</h4><p class="text-dark-400 text-sm">Perfeccionando el arte del ron y el tabaco</p></div></div>
+<div class="flex gap-4"><span class="font-display text-3xl font-bold text-rum-500">200+</span><div><h4 class="font-display text-lg font-semibold text-dark-50">Rones en carta</h4><p class="text-dark-400 text-sm">De todas las regiones del mundo</p></div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="events" class="py-24 lg:py-32 relative section-grain"><div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="text-center mb-16">
+<p class="text-rum-500 text-sm font-medium tracking-[0.2em] uppercase mb-4 reveal">Proximos eventos</p>
+<div class="line-accent mx-auto mb-6 reveal"></div>
+<h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.95] text-dark-50 reveal">Noches que recordar</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+<div class="card-hover rounded-2xl overflow-hidden bg-dark-800 border border-dark-600 reveal"><div class="aspect-[4/3] overflow-hidden img-zoom relative"><img src="https://picsum.photos/seed/bar-event-1/600/450" alt="Catacion de rones" class="w-full h-full object-cover"><div class="absolute top-4 left-4 bg-rum-500 text-dark-950 px-3 py-1 rounded-full text-xs font-semibold">Catacion</div></div><div class="p-6"><p class="text-rum-500 text-sm font-medium">15 de Octubre</p><h3 class="font-display text-lg font-semibold text-dark-50 mt-1 mb-2">Catacion de rones vintage</h3><p class="text-dark-400 text-sm leading-relaxed">Recorre los sabores de los mejores rones añejos acompanados de maridaje exclusivo.</p><button class="btn-outline px-5 py-2.5 rounded-full text-sm mt-4">Reservar lugar</button></div></div>
+<div class="card-hover rounded-2xl overflow-hidden bg-dark-800 border border-dark-600 reveal reveal-delay-1"><div class="aspect-[4/3] overflow-hidden img-zoom relative"><img src="https://picsum.photos/seed/bar-event-2/600/450" alt="Noche de cigars" class="w-full h-full object-cover"><div class="absolute top-4 left-4 bg-dark-50 text-dark-950 px-3 py-1 rounded-full text-xs font-semibold">Exclusivo</div></div><div class="p-6"><p class="text-rum-500 text-sm font-medium">22 de Octubre</p><h3 class="font-display text-lg font-semibold text-dark-50 mt-1 mb-2">Noche de cigars premium</h3><p class="text-dark-400 text-sm leading-relaxed">Una seleccion de cigars finos maridados con rones oscuros en un ambiente intimo.</p><button class="btn-outline px-5 py-2.5 rounded-full text-sm mt-4">Reservar lugar</button></div></div>
+<div class="card-hover rounded-2xl overflow-hidden bg-dark-800 border border-dark-600 reveal reveal-delay-2"><div class="aspect-[4/3] overflow-hidden img-zoom relative"><img src="https://picsum.photos/seed/bar-event-3/600/450" alt="Mixology class" class="w-full h-full object-cover"><div class="absolute top-4 left-4 bg-dark-50 text-dark-950 px-3 py-1 rounded-full text-xs font-semibold">Workshop</div></div><div class="p-6"><p class="text-rum-500 text-sm font-medium">5 de Noviembre</p><h3 class="font-display text-lg font-semibold text-dark-50 mt-1 mb-2">Workshop de mixologia</h3><p class="text-dark-400 text-sm leading-relaxed">Aprende a crear cocteles classics y contemporaneos de la mano de nuestros bartenders.</p><button class="btn-outline px-5 py-2.5 rounded-full text-sm mt-4">Reservar lugar</button></div></div>
+</div>
+</div>
+</section>
+<section id="reservation" class="py-24 lg:py-32 relative overflow-hidden"><div class="absolute inset-0 bg-dark-950"></div><div class="ambient-glow top-0 right-0"></div><div class="relative max-w-3xl mx-auto px-6 lg:px-8 text-center">
+<p class="text-rum-500 text-sm font-medium tracking-[0.2em] uppercase mb-4 reveal">Reserva tu mesa</p>
+<div class="line-accent mx-auto mb-6 reveal"></div>
+<h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight leading-[0.95] text-dark-50 mb-4 reveal">Haz tu reserva</h2>
+<p class="text-dark-300 text-lg font-light leading-relaxed max-w-lg mx-auto mb-12 reveal reveal-delay-1">Una mesa te espera. Reserva tu experiencia en Tabaco y Ron.</p>
+<form class="space-y-6 text-left reveal reveal-delay-2" onsubmit="handleSubmit(event)">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-sm text-dark-300 mb-2" for="name">Nombre</label><input type="text" id="name" required class="w-full bg-dark-700 border border-dark-600 rounded-full px-5 py-3 text-dark-100 placeholder-dark-400 focus:border-rum-500 focus:outline-none transition-colors text-sm"></div><div><label class="block text-sm text-dark-300 mb-2" for="guests">Personas</label><select id="guests" class="w-full bg-dark-700 border border-dark-600 rounded-full px-5 py-3 text-dark-100 focus:border-rum-500 focus:outline-none transition-colors text-sm appearance-none cursor-pointer"><option>2 personas</option><option>4 personas</option><option>6 personas</option><option>8 personas</option><option>10+ personas</option></select></div></div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6"><div><label class="block text-sm text-dark-300 mb-2" for="date">Fecha</label><input type="date" id="date" required class="w-full bg-dark-700 border border-dark-600 rounded-full px-5 py-3 text-dark-100 focus:border-rum-500 focus:outline-none transition-colors text-sm"></div><div><label class="block text-sm text-dark-300 mb-2" for="time">Hora</label><input type="time" id="time" required class="w-full bg-dark-700 border border-dark-600 rounded-full px-5 py-3 text-dark-100 focus:border-rum-500 focus:outline-none transition-colors text-sm"></div></div>
+<button type="submit" class="btn-rum w-full px-8 py-4 rounded-full text-sm mt-4">Confirmar reserva</button>
+</form>
+</div>
+</section>
+<footer class="py-16 border-t border-dark-700"><div class="max-w-7xl mx-auto px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="md:col-span-2"><h3 class="font-display text-xl font-bold tracking-tight text-dark-50 mb-4">Tabaco y Ron</h3><p class="text-dark-400 text-sm leading-relaxed max-w-sm mb-6">Un espacio donde el tabaco y el ron se encuentran en un ambiente exclusivo y acogedor. Abierto de martes a domingo, desde las 18:00.</p>
+<div class="flex gap-4">
+<a href="#" class="w-10 h-10 rounded-full border border-dark-600 flex items-center justify-center text-dark-300 hover:text-rum-500 hover:border-rum-500 transition-all duration-300" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+<a href="#" class="w-10 h-10 rounded-full border border-dark-600 flex items-center justify-center text-dark-300 hover:text-rum-500 hover:border-rum-500 transition-all duration-300" aria-label="Twitter"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l11.7 16H20L8.3 4H4zm1.5 3l8.2 11.3h3.5L5.5 7H5.5z"/></svg></a>
+<a href="#" class="w-10 h-10 rounded-full border border-dark-600 flex items-center justify-center text-dark-300 hover:text-rum-500 hover:border-rum-500 transition-all duration-300" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+</div>
+</div>
+<div><h4 class="font-display text-sm font-semibold text-dark-50 uppercase tracking-wider mb-4">Enlace rapido</h4><ul class="space-y-3"><li><a href="#cocktails" class="text-dark-400 text-sm hover:text-rum-500 transition-colors">Carta de rones</a></li><li><a href="#about" class="text-dark-400 text-sm hover:text-rum-500 transition-colors">Nuestra historia</a></li><li><a href="#events" class="text-dark-400 text-sm hover:text-rum-500 transition-colors">Eventos</a></li><li><a href="#reservation" class="text-dark-400 text-sm hover:text-rum-500 transition-colors">Reservas</a></li></ul></div>
+<div><h4 class="font-display text-sm font-semibold text-dark-50 uppercase tracking-wider mb-4">Contacto</h4><ul class="space-y-3"><li class="text-dark-400 text-sm">Calle Delicias 42</li><li class="text-dark-400 text-sm">Madrid, Spain</li><li class="text-dark-400 text-sm">info@tabacoyron.com</li><li class="text-dark-400 text-sm">+34 91 234 56 78</li></ul></div>
+</div>
+<div class="pt-8 border-t border-dark-700 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-dark-500 text-xs">&copy; 2024 Tabaco y Ron. Todos los derechos reservados.</p>
+<div class="flex gap-6"><a href="#" class="text-dark-500 text-xs hover:text-dark-300 transition-colors">Aviso legal</a><a href="#" class="text-dark-500 text-xs hover:text-dark-300 transition-colors">Politica de privacidad</a><a href="#" class="text-dark-500 text-xs hover:text-dark-300 transition-colors">Cookie policy</a></div>
+</div>
+</div>
+</footer>
+<div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-rum-500 text-dark-950 px-6 py-3 rounded-full text-sm font-semibold opacity-0 pointer-events-none transition-all duration-500 translate-y-4 z-[100]">Reserva confirmada. Te esperamos.</div>
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{dark:{950:"#060504",900:"#0C0B0A",800:"#141210",700:"#1E1C19",600:"#2A2620",500:"#4A3E34",400:"#8A7E72",300:"#B0A496",200:"#D4C8B8",100:"#EDE8DE",50:"#F5F0E8"},rum:{500:"#C8884A",400:"#D89858",300:"#E4A866",600:"#B07438"}},fontFamily:{display:["Space Grotesk","sans-serif"],body:["DM Sans","sans-serif"]}}}};
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("visible")})},{threshold:.1,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+const mT=document.getElementById("menuToggle"),mC=document.getElementById("menuClose"),mM=document.getElementById("mobileMenu");mT.addEventListener("click",()=>mM.classList.add("open"));mC.addEventListener("click",()=>mM.classList.remove("open"));document.querySelectorAll(".mobile-link").forEach(l=>l.addEventListener("click",()=>mM.classList.remove("open")));
+const nb=document.getElementById("navbar");window.addEventListener("scroll",()=>{if(window.scrollY>50)nb.classList.add("shadow-lg");else nb.classList.remove("shadow-lg")});
+function handleSubmit(e){e.preventDefault();const t=document.getElementById("toast");t.style.opacity="1";t.style.transform="translate(-50%,0)";t.style.pointerEvents="auto";setTimeout(()=>{t.style.opacity="0";t.style.transform="translate(-50%,16px)";t.style.pointerEvents="none"},3000);e.target.reset()}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(e){e.preventDefault();const t=document.querySelector(this.getAttribute("href"));if(t)t.scrollIntoView({behavior:"smooth",block:"start"})})});
+</script>
+</body>
+</html>
